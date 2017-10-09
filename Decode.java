@@ -1,5 +1,9 @@
 public class Decode extends Encode{
 
+  static String decodeMessage(String integers){
+   return decodeMessage(toIntegerArray(integers));
+  }
+  
   static String decodeMessage(int[] numbers){
    String alphabet = "abcdefghijklmnopqrstuvwxyz";
    String decode = "";
@@ -8,13 +12,8 @@ public class Decode extends Encode{
      decode += alphabet.charAt(numbers[i]) + "";
      alphabet = reorder(alphabet,numbers[i]);
    }
-   
-   System.out.println(decode + "\n" + alphabet);
-   return decode;
-  }
   
-  static String decodeMessage(String integers){
-   return decodeMessage(toIntegerArray(integers));
+   return decode;
   }
   
   static int[] toIntegerArray(String numbers){
