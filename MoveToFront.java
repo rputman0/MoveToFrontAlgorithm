@@ -18,7 +18,7 @@ public class MoveToFront extends Decode{
                  "\nDecoded Message: " + decodeMessage(numbers));
     }
     catch(Exception e){
-     System.err.println("Error: You cannot type an integer.");
+     System.err.println("Error: You cannot type that. Please enter another phrase.");
     }
     input.close();
   }
