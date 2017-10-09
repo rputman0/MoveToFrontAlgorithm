@@ -5,7 +5,8 @@ public class MoveToFront extends Decode{
     System.out.println("Enter a phrase to encrypt: ");
     Scanner input = new Scanner(System.in);
     
-    //The user should input a lowercase word, with no spaces and integers
+    //The user should not input an integer, 
+    //otherwise changes the message to lowercase and removes any spaces
     try{
      String message = input.nextLine();
      message = message.toLowerCase();
@@ -14,10 +15,10 @@ public class MoveToFront extends Decode{
      String numbers = encodeIntegers(message);
      
      System.out.println(numbers + "\n" + encodeAlphabet(message) +
-                 "\nDecoded Message: " + decodedMessage(numbers));
+                 "\nDecoded Message: " + decodeMessage(numbers));
     }
     catch(Exception e){
-     System.out.println();
+     System.err.println("Error: You cannot type an integer.");
     }
     input.close();
   }
