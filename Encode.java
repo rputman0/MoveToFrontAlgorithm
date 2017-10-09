@@ -1,17 +1,26 @@
 public class Encode{
   
-   static String encodeMessage(String word){
+  static String encodeIntegers(String message){
     String alphabet = "abcdefghijklmnopqrstuvwxyz";
-    String encoded = reorderFirstLetter(alphabet,word);    
-    String encodedInt = getIndexOf(alphabet,word,0);
+    String encoded = reorderFirstLetter(alphabet,message);    
+    String encodedInt = getIndexOf(alphabet,message,0);
     
-    for(int i=1;i<word.length();i++){
-     encodedInt += getIndexOf(encoded,word,i);
-     encoded = reorder(encoded, getAlphabetPosition(encoded,word.charAt(i)) );
+    for(int i=1;i<message.length();i++){
+     encodedInt += getIndexOf(encoded,message,i);
+     encoded = reorder(encoded, getAlphabetPosition(encoded,message.charAt(i)) );
     }
     
-    System.out.println(encodedInt + "\n" + encoded + "\n");
     return encodedInt;
+  }
+  
+   static String encodeAlphabet(String message){
+    String alphabet = "abcdefghijklmnopqrstuvwxyz";
+    String encoded = reorderFirstLetter(alphabet,message);
+    
+    for(int i=1;i<message.length();i++)
+     encoded = reorder(encoded, getAlphabetPosition(encoded,message.charAt(i)) );
+    
+    return encoded;
   }
   
   static String reorderFirstLetter(String alphabet, String word){
